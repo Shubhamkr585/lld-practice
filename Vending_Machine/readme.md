@@ -20,3 +20,22 @@ Slot
 Inventory
 Payment
 State
+
+design patterns
+
+state pattern 
+states--
+idlestate
+hasmoneystate
+dispensingstate
+outofstockstate
+
+strategy pattern(for payment)
+cash
+card 
+upi
+
+factory method (for payment creation)
+
+singleton pattern( for vendingmachine)
+

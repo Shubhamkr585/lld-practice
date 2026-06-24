@@ -1,0 +1,61 @@
+functional--
+1.auth using card and pin
+2.withdraw cash
+3.deposit
+4.balance inquiry
+5.Mini statement/ transaction history
+6.change pin
+
+card handling
+-->insert card
+-->validate card(expiry,bank,status)
+-->eject card after transaction/timeout
+-->retain card after multiple wrong PIN attempts
+
+auth
+-->verify PIN with bank server
+-->block card after 3 failed attempts
+-->session creation after successful login
+
+cash withdrawal
+-->enter amount
+-->validate:
+   sufficient balance
+   ATM has enough money
+   Denomination constraints(like user entered for $800 but atm do not have 100 deno currently so it can serve)
+-->Dispense cash
+-->Deduct balance
+-->Generate receipt
+
+Cash deposit
+-->accept cash/cheque
+-->validate amount
+-->update account balance(instant or delayed)
+
+Balance inquiry
+-->fetch cash from the bank server
+-->display to user
+
+Receipt Generation
+-->print transaction details
+-->option to skip receipt
+
+bank server communication
+-->auth
+-->bal
+-->trnx
+
+session handling
+-->timeout after inactivity
+-->auto logout
+-->cancel trnx option
+
+design pattern --
+command
+state design-> which state the atm is currently in
+chain of responsiblities(allow dispensing cash combination)
+singleton -> managing the single atm instance
+
+
+
+non-functional--
